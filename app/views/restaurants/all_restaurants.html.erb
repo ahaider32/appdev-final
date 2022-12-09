@@ -1,0 +1,21 @@
+ <div>
+    <a href="/restaurants">
+      Go back
+    </a>
+ </div>
+ 
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          Restaurant Name
+        </th>
+      </tr>
+      <% Restaurant.distinct(:name).pluck(:name).each do |name| %>
+      <tr>
+        <td>
+          <%= name %>
+        </td>
+       <% end %>
+    </table>
+  </div>

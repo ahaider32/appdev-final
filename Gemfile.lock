@@ -144,6 +144,7 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
+    filterrific (5.2.3)
     git (1.11.0)
       rchardet (~> 1.8)
     globalid (1.0.0)
@@ -367,6 +368,7 @@ DEPENDENCIES
   draft_generators!
   factory_bot_rails
   faker
+  filterrific
   grade_runner!
   htmlbeautifier
   http

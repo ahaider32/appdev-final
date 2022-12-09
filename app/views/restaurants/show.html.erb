@@ -1,0 +1,117 @@
+<div>
+  <div>
+    <h1>
+      <%= @the_restaurant.user_id %>'s <%= @the_restaurant.name %> Review Details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/restaurants">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_restaurant/<%= @the_restaurant.id %>">
+          Delete restaurant
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Restaurant
+      </dt>
+      <dd>
+        <%= @the_restaurant.name %>
+      </dd>
+
+      <dt>
+        Cuisine
+      </dt>
+      <dd>
+        <%= @the_restaurant.cuisine %>
+      </dd>
+
+      <dt>
+        Location
+      </dt>
+      <dd>
+        <%= @the_restaurant.location %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_restaurant.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_restaurant.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit restaurant
+    </h2>
+
+    <form action="/modify_restaurant/<%= @the_restaurant.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Restaurant
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_restaurant.name %>">
+      </div>
+
+      <div>
+        <label for="cuisine_box">
+          Cuisine
+        </label>
+
+        <input type="text" id="cuisine_box" name="query_cuisine" value="<%= @the_restaurant.cuisine %>">
+      </div>
+
+      <div>
+        <label for="location_box">
+          Location
+        </label>
+
+        <input type="text" id="location_box" name="query_location" value="<%= @the_restaurant.location %>">
+      </div>
+
+      <div>
+        <label for="rating_box">
+          Rating
+        </label>
+
+        <input type="text" id="rating_box" name="query_rating" value="<%= @the_restaurant.rating %>">
+      </div>
+
+      <div>
+        <label for="comment_box">
+          Comment
+        </label>
+
+        <input type="text" id="comment_box" name="query_comment" value="<%= @the_restaurant.comments %>">
+      </div>
+
+      <button>
+        Update restaurant
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
